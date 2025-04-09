@@ -1,0 +1,10 @@
+mkdir -p ssl/influxdb ssl/telegraf ssl/grafana
+
+# InfluxDB
+openssl req -x509 -newkey rsa:4096 -keyout ssl/influxdb/key.pem -out ssl/influxdb/cert.pem -days 365 -nodes -subj "/CN=influxdb"
+
+# Telegraf
+openssl req -x509 -newkey rsa:4096 -keyout ssl/telegraf/key.pem -out ssl/telegraf/cert.pem -days 365 -nodes -subj "/CN=telegraf"
+
+# Grafana
+openssl req -x509 -newkey rsa:4096 -keyout ssl/grafana/key.pem -out ssl/grafana/cert.pem -days 365 -nodes -subj "/CN=grafana"
